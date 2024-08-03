@@ -16,5 +16,5 @@ Then update the ``` applicaton.json ``` file like this
 ```
 And one last step open ``` \Spotify-Asp\SpotifyASP``` directory in your command prompt and write 
 > dotnet watch
-Now you're good to go! <br>
+Now you're good to go! 
 If you find any bugs or you have any ideas you can create a pull request anytime.
