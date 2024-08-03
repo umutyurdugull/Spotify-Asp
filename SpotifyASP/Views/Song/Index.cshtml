@@ -1,0 +1,24 @@
+﻿@model SongViewModel
+
+<form asp-action="Index" method="get">
+    <input type="text" name="query" value="@Model.Query" placeholder="Şarkı Ara" />
+    <button type="submit">Ara</button>
+</form>
+
+@if (Model.Tracks != null && Model.Tracks.Any())
+{
+        <ul>
+        @foreach (var track in Model.Tracks)
+        {
+                    <li>
+                        <strong>@track.Name</strong> - @track.Artists[0].Name
+                        <br />
+                        <a href="@track.ExternalUrls["spotify"]">Spotify'da Aç</a>
+                    </li>
+        }
+        </ul>
+}
+else if (Model.Query != null)
+{
+        <p>Sonuç bulunamadı.</p>
+}
