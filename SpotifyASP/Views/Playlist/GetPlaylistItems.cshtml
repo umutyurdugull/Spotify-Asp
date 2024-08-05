@@ -1,0 +1,29 @@
+﻿@model PlaylistItemsViewModel
+
+@if (Model.Tracks != null && Model.Tracks.Any())
+{
+    <ul>
+
+        @foreach (var track in Model.Tracks)
+        {
+            var playableItem = track.Track as SpotifyAPI.Web.FullTrack;
+            if (playableItem != null)
+            {
+                long milliseconds = playableItem.DurationMs;
+                long minutes = (milliseconds / 1000) / 60;
+                long seconds = (milliseconds / 1000) % 60;
+                var duration = $"{minutes} : {seconds}";
+
+                <li>
+                    <strong>@playableItem.Name</strong> - @playableItem.Artists[0].Name - Çıkış Tarihi : @playableItem.Album.ReleaseDate - Bulunduğu Albüm : @playableItem.Album.Name  - Şarkı Uzunluğu : @duration
+                    <br />
+                    <a href="@playableItem.ExternalUrls["spotify"]">Spotify'da Aç</a>
+                </li>
+            }
+        }
+    </ul>
+}
+else
+{
+    <p>Çalma listesi öğesi bulunamadı veya içeriği boş.</p>
+}

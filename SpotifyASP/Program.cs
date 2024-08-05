@@ -6,7 +6,6 @@ using SpotifyAPI.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Spotify API yapılandırmasını al
 var spotifyConfig = builder.Configuration.GetSection("Spotify").Get<SpotifyConfig>();
 
 // Servisleri ekle
@@ -22,7 +21,6 @@ builder.Services.AddSingleton<SpotifyClient>(provider =>
 
 var app = builder.Build();
 
-// Orta katmanları yapılandır
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -44,7 +42,6 @@ app.MapControllerRoute(
 
 app.Run();
 
-// Spotify yapılandırma sınıfı
 public class SpotifyConfig
 {
     public string ClientId { get; set; }

@@ -1,9 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<style>
+    body {
+        background-color: black;
+    }
+</style>
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <a class="btn btn-outline-primary" asp-controller="Search" asp-action="Index">Search Artist</a>
-    <a class="btn btn-outline-primary" asp-controller="Song" asp-action="Index">Search Song</a>
+    <h1 class="display-4" style="color : white;">Hoşgeldiniz</h1>
+    <a class="btn btn-outline-primary" asp-controller="Search" asp-action="Index">Sanatçı Ara</a>
+    <a class="btn btn-outline-primary" asp-controller="Song" asp-action="Index">Şarkı Ara</a>
+    <a class="btn btn-outline-primary" asp-controller="Playlist" asp-action="GetPlaylistItems">Çalma Listesi Ara</a>
 </div>

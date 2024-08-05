@@ -1,0 +1,29 @@
+﻿@model PlaylistViewModel
+
+<form asp-action="Index" method="get">
+    <input type="text" name="query" value="@Model.Query" placeholder="Çalma Listesi Ara" />
+    <button type="submit">Ara</button>
+</form>
+
+@if (Model.Playlists != null && Model.Playlists.Any())
+{
+    <ul>
+        @foreach (var playlist in Model.Playlists)
+        {
+            <li>
+                <strong>@playlist.Name</strong> - @playlist.Owner.DisplayName
+                <br/>
+                @if (!string.IsNullOrEmpty(playlist.Description))
+                {
+                    
+                    @playlist.Description
+                }
+                <a href="/Playlist/GetPlaylistItems?playlistId=@playlist.Id">Çalma Listesi Öğelerini Görüntüle</a>
+            </li>
+        }
+    </ul>
+}
+else if (Model.Query != null)
+{
+    <p>Çalma listesi bulunamadı.</p>
+}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x5tUgPD+RlFDv0j7G7aXbeHrtlHfhkopww42DLcEiMZmOmjSylm3LXRR0aUNNGxN6jFFKDOcZSsRO6mZElQ61g==",
+  "dgSpecHash": "Iw8mV0rHBkHSh9dyUIQOBCiLoxRs90EsMizuNi3i+pzC28GZNyn6fzP5V9enupxwgTNZ/4o9u/uN6PsKKPczBA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Can\\Desktop\\SpotifyASP\\SpotifyASP\\SpotifyASP.csproj",
+  "projectFilePath": "C:\\Users\\Can\\Desktop\\Spotify-Asp\\SpotifyASP\\SpotifyASP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Can\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Can\\.nuget\\packages\\spotifyapi.web\\7.1.1\\spotifyapi.web.7.1.1.nupkg.sha512"
