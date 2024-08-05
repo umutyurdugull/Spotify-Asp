@@ -21,7 +21,7 @@ public class PlaylistController : Controller
 
         var searchRequest = new SearchRequest(SearchRequest.Types.Playlist, query)
         {
-            Limit = 10
+            Limit = 25
         };
 
         var searchResponse = await _spotifyClient.Search.Item(searchRequest);

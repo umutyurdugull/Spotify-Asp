@@ -1,5 +1,12 @@
 ﻿@model SongViewModel
 
+<style>
+    body {
+        background-color: black;
+        color: white; 
+    }
+</style>
+
 <form asp-action="Index" method="get">
     <input type="text" name="query" value="@Model.Query" placeholder="Şarkı Ara" />
     <button type="submit">Ara</button>
@@ -7,18 +14,22 @@
 
 @if (Model.Tracks != null && Model.Tracks.Any())
 {
-        <ul>
+    <ul>
         @foreach (var track in Model.Tracks)
         {
-                    <li>
-                        <strong>@track.Name</strong> - @track.Artists[0].Name
-                        <br />
-                        <a href="@track.ExternalUrls["spotify"]">Spotify'da Aç</a>
-                    </li>
+            long minutes = (track.DurationMs / 1000) / 60;
+            long seconds = (track.DurationMs / 1000) % 60;
+            var duration = $"{minutes} : {seconds}";
+            <li>
+                @track.Artists[0].Name  - <strong>@track.Name</strong> |  @track.Album.Name - Uzunluk : @duration | 
+                <br />
+
+                <a href="@track.ExternalUrls["spotify"]">Spotify'da Aç</a>
+            </li>
         }
-        </ul>
+    </ul>
 }
 else if (Model.Query != null)
 {
-        <p>Sonuç bulunamadı.</p>
+    <p>Sonuç bulunamadı.</p>
 }

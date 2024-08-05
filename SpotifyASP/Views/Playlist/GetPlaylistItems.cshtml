@@ -1,9 +1,16 @@
 ﻿@model PlaylistItemsViewModel
 
+<style>
+    body{
+        color : white;
+        background-color : black;
+    }
+</style>
 @if (Model.Tracks != null && Model.Tracks.Any())
 {
     <ul>
 
+        
         @foreach (var track in Model.Tracks)
         {
             var playableItem = track.Track as SpotifyAPI.Web.FullTrack;
@@ -12,7 +19,7 @@
                 long milliseconds = playableItem.DurationMs;
                 long minutes = (milliseconds / 1000) / 60;
                 long seconds = (milliseconds / 1000) % 60;
-                var duration = $"{minutes} : {seconds}";
+                var duration = $"{minutes} . {seconds}";
 
                 <li>
                     <strong>@playableItem.Name</strong> - @playableItem.Artists[0].Name - Çıkış Tarihi : @playableItem.Album.ReleaseDate - Bulunduğu Albüm : @playableItem.Album.Name  - Şarkı Uzunluğu : @duration

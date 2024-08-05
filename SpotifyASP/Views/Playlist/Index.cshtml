@@ -1,4 +1,10 @@
 ﻿@model PlaylistViewModel
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+</style>
 
 <form asp-action="Index" method="get">
     <input type="text" name="query" value="@Model.Query" placeholder="Çalma Listesi Ara" />

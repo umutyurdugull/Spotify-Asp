@@ -22,7 +22,7 @@ public class SongController : Controller
         //hayatımdan nefret ediyorum.
         var searchRequest = new SearchRequest(SearchRequest.Types.Track, query)
         {
-            Limit = 20
+            Limit = 25
         };
 
         var searchResponse = await _spotifyClient.Search.Item(searchRequest);

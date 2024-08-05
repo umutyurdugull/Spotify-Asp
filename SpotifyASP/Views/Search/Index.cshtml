@@ -1,17 +1,28 @@
 ﻿@model SearchViewModel
-
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }</style>
 <form asp-action="Index" method="get">
     <input type="text" name="query" value="@Model.Query" placeholder="Sanatçı Ara" />
     <button type="submit">Ara</button>
 </form>
+
+<style>
+    body {
+        background-color: black;
+    }
+</style>
 
 @if (Model.Artists != null && Model.Artists.Any())
 {
     <ul>
         @foreach (var artist in Model.Artists)
         {
-            <li>@artist.Name</li>
-
+            <li style="color : white">
+                @artist.Name - Followers: @artist.Followers.Total - Genres: @string.Join(", ", artist.Genres)
+            </li>
         }
     </ul>
 }
